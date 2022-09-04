@@ -19,18 +19,18 @@ namespace Shoten13Sample
           collectionName:"Items",
           ConnectionStringSetting = "CosmosDBConnectionString"
         )]
-        IAsyncCollector<dynamic> documentOut,
+        IAsyncCollector<AnchorInfo> documentOut,
         ILogger log
     )
     {
-      string anchorID = req.Query["anchorID"];
+      string anchorID = req.Query["anchorKey"];
       string expireOn = req.Query["expireOn"];
 
       if (!string.IsNullOrEmpty(anchorID) && !string.IsNullOrEmpty(expireOn))
       {
-        await documentOut.AddAsync(new
+        await documentOut.AddAsync(new AnchorInfo
         {
-          anchorID = anchorID,
+          anchorKey = anchorID,
           expireOn = expireOn
         });
 
