@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Shoten13_ASA_AR_Sample_backend": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7036",
+      "launchBrowser": false
+    }
+  }
+}
